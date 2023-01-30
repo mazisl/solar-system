@@ -6,9 +6,20 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  let moonsPlanet = data.planets
+    .filter(planet => {
+      if (planet.moons) {
+        return planet.moons.includes(moonName)
+      }
+    })
+    .map(planet => {
+      return planet.name
+    })
+
+    return moonsPlanet[0]
 }
 
-
+findPlanetNameByMoon(data, 'Mimas')
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"

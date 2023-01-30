@@ -6,7 +6,16 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+  let arrWithEarthData = data.planets
+    .filter(planet => {
+      if (planet.name === 'Earth') return planet
+    })
+
+  let [earthData] = arrWithEarthData
+  return earthData
 }
+
+getEarthData(data)
 
 
 

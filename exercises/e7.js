@@ -6,9 +6,18 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
+  let planetsWMoons = data.planets.filter(planet => {
+    if (planet.moonsCount) {
+      return planet.name
+    }
+  })
+  .map(planet => {
+    return planet.name
+  })
+  return planetsWMoons
 }
 
-
+getPlanetsNamesWithMoons(data)
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

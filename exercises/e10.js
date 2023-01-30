@@ -6,9 +6,16 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
+  let arrWithAstData = data.asteroids
+    .filter(asteroid => {
+      if (asteroid.name === asteroidName) return asteroid
+    })
+
+  let [astData] = arrWithAstData
+  return astData
 }
 
-
+getAsteroidDataByName(data, '1 Ceres')
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

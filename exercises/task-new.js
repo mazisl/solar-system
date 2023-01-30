@@ -1,4 +1,4 @@
-export const data = {
+const data = {
   planets: [
     {
       id: 'uranus',
@@ -208,3 +208,20 @@ export const data = {
     { name: '101955 Bennu', discoveryYear: 1999, orbitalPeriod: 436.604 }
   ]
 };
+
+function find(array, callback) {
+  // Your code goes here...
+  let newArr = []
+
+  for (let elm of array) {
+    if (callback(elm)) {
+      newArr.push(elm.name)
+    }
+  }
+
+  return newArr[0]
+}
+
+console.log(find(data.asteroids, callbackParam => {
+  if (callbackParam.orbitalPeriod >= 100000) return true
+}))
